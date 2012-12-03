@@ -1,0 +1,6 @@
+﻿using RStein.Cookbook.Business.Core;
+
+namespace RStein.Cookbook.Business.EF.Configuration
+{
+  public class RecipeIngredientDetailConfiguration : CommonConfiguration<RecipeIngredientDetail> {}
+}

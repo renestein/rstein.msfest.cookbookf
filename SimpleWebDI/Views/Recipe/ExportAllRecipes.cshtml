@@ -1,0 +1,19 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Export dat</title>
+    </head>
+    <body>
+        <div>
+            <p>Všechny recepty exportovány.</p>
+            @Html.RouteLink("Zpět na recepty", "PagerRoute", new {action = "Index"});
+        </div>
+    </body>
+</html>

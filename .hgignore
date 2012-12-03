@@ -1,0 +1,8 @@
+syntax: glob 
+*.trx
+bin
+Bin
+obj
+TestResults
+_ReSharper*
+.svn

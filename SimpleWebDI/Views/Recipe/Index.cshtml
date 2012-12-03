@@ -1,0 +1,28 @@
+﻿@using MvcContrib.UI.Grid
+@using SimpleWebDI
+@model SimpleWebDI.Models.SimplePaginator<RStein.Cookbook.Business.Core.Recipe>
+
+@{
+    ViewBag.Title = "Recepty";
+}
+
+@Html.RouteLink("Exportovat recepty", "PagerRoute", new {action = "ExportAllRecipes"})
+
+@Html.Grid(Model.DataSource).Columns(columnBuilder =>
+                                         {
+                                             columnBuilder.For(recipe => recipe.Name).Named(CommonResources.RECIPE_NAME);
+                                             columnBuilder.For(recipe => recipe.Description).Named(CommonResources.RECIPE_DESCRIPTION);
+                                         })
+
+
+<p>
+    @if (Model.HasPreviousPage)
+    {
+        @Html.RouteLink("Předchozí", "PagerRoute", new {page = Model.PreviousPage})
+    }
+        
+    @if (Model.HasNextPage)
+    {
+        @Html.RouteLink("Další", "PagerRoute", new {page = Model.NextPage})
+    }
+</p>
